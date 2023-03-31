@@ -1,0 +1,19 @@
+.slider-wraper{
+    position: relative;
+}
+
+
+
+.arrow{
+    position: absolute;
+    top: 50%;
+   transform: translateY(-50%);
+}
+
+.arrow-left {
+    left: 50px;
+}
+
+.arrow-right {
+    right: 50px;
+}

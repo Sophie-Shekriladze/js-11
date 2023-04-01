@@ -32,6 +32,7 @@ const arrowRight = document.getElementById("arrow-right");
 let sliderIndex = 0;
 
 //slider სტრუქტურის აწყობა
+// div შექმნა
 
 function createDivTag() {
   let div = document.createElement("div");
@@ -39,6 +40,7 @@ function createDivTag() {
   return div;
 }
 
+// სურათის შექმნა
 function createImgTag(item) {
   let tagImage = document.createElement("img");
   tagImage.setAttribute("src", `${item.imageUrl}`);
@@ -47,12 +49,21 @@ function createImgTag(item) {
   return tagImage;
 }
 
+
+//სათაურის შექმნა
 function createTitle(item) {
   let titleTag = document.createElement("h2");
   titleTag.innerText = `${item.title}`;
 
   return titleTag;
 }
+
+
+//დოტების შექმნა
+function createDots() {
+  
+}
+
 
 // რომელი სლაიდ უნდა გამოჩნდეს
 function slide() {
@@ -70,12 +81,30 @@ slide();
 
 //ღილაკის კლიკ ივენთები
 
-arrowLeft.addEventListener("click", function () {
+function arrowLeftClick() {
+  if (sliderIndex == 0) {
+    sliderIndex = dataSlider.length - 1;
+    slide();
+    return;
+  }
   sliderIndex -= 1;
   slide();
-});
+}
 
-arrowRight.addEventListener("click", function () {
+function arrowRightClick() {
+  if (sliderIndex == dataSlider.length - 1) {
+    sliderIndex = 0;
+    slide();
+    return;
+  }
   sliderIndex += 1;
   slide();
-});
+}
+
+arrowLeft.addEventListener("click", arrowLeftClick);
+
+arrowRight.addEventListener("click", arrowRightClick);
+
+setInterval(() => {
+  arrowRightClick();
+}, 3000); // აქ იწერება მილიწამები, ამიტომ 3 წამი 3*1000

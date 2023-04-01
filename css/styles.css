@@ -2,13 +2,30 @@
     position: relative;
 }
 
+/* dots */
+.dots-parent {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 20px;
+}
 
+.dots-child{
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-color: brown;
+    margin: 8px;
+}
 
 .arrow{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    border: none;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;   
     
 }
 

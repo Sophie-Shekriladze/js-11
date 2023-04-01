@@ -15,8 +15,19 @@
     width: 17px;
     height: 17px;
     border-radius: 50%;
-    background-color: brown;
+    background-color: rgb(249, 246, 246);
     margin: 8px;
+}
+
+.dots-child.activeDot{
+    background-color: red;
+}
+
+.bg-image {
+    height: 500px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .arrow{
@@ -43,12 +54,12 @@ img{
 
 .fa-circle-chevron-right{
     font-size: 25px;
-    color: brown;
+    color: red;
     cursor: pointer;
 }
 
 .fa-circle-chevron-left{
     font-size: 25px;
-    color: brown;
+    color: red;
     cursor: pointer;
 }

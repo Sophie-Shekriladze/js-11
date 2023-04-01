@@ -29,6 +29,7 @@ const dataSlider = [
 const sliderCcontent = document.getElementById("slider-content");
 const arrowLeft = document.getElementById("arrow-left");
 const arrowRight = document.getElementById("arrow-right");
+const dotElement = document.getElementsByClassName("dots-child");
 let sliderIndex = 0;
 
 //slider სტრუქტურის აწყობა
@@ -49,32 +50,60 @@ function createImgTag(item) {
   return tagImage;
 }
 
-
 //სათაურის შექმნა
 function createTitle(item) {
   let titleTag = document.createElement("h2");
   titleTag.innerText = `${item.title}`;
 
   return titleTag;
-}
 
+  //background image bg image
+  // let tagImageBg = document.createElement("div");
+  // tagImageBg.style.backgroundImage = `url(${item.imageUrl})`;
+  // tagImageBg.classList.add("bg-image");
+
+  // return tagImageBg;
+}
 
 //დოტების შექმნა
 function createDots() {
-  
+  let dotParentElement = document.createElement("div");
+  dotParentElement.classList.add("dots-parent");
+
+  dataSlider.forEach((Element) => {
+    let dotItem = document.createElement("div");
+    dotItem.classList.add("dots-child");
+    dotItem.setAttribute("data-id", `${Element.id - 1}`);
+
+    dotItem.addEventListener("click", function (event) {
+      console.log(event.target);
+
+      let dotId = event.target.getAttribute("data-id");
+      console.log("dot id = ", dotId);
+      sliderIndex = dotId;
+      slide();
+    });
+    dotParentElement.appendChild(dotItem);
+  });
+
+  console.log(dotParentElement);
+  return dotParentElement;
 }
 
-
-// რომელი სლაიდ უნდა გამოჩნდეს
+// რომელი სლაიდ უნდა გამოჩნდეს// მთავარი ფუნქცია
 function slide() {
   sliderCcontent.innerHTML = " "; //გავასუფთაოთ კონტენტი
   let slideItem = createDivTag();
   let imgItem = createImgTag(dataSlider[sliderIndex]);
   let titleItem = createTitle(dataSlider[sliderIndex]);
+  let dots = createDots();
 
   slideItem.appendChild(imgItem);
   slideItem.appendChild(titleItem);
   sliderCcontent.appendChild(slideItem);
+  sliderCcontent.appendChild(dots);
+
+  dotElement[sliderIndex].classList.add("activeDot");
 }
 
 slide();

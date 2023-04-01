@@ -56,9 +56,26 @@ function createTitle(item) {
 
 // რომელი სლაიდ უნდა გამოჩნდეს
 function slide() {
-  console.log(dataSlider[sliderIndex]);
+  sliderCcontent.innerHTML = " "; //გავასუფთაოთ კონტენტი
   let slideItem = createDivTag();
-  let imgItem = createImgTag(dataSlider[sliderIndex])
+  let imgItem = createImgTag(dataSlider[sliderIndex]);
+  let titleItem = createTitle(dataSlider[sliderIndex]);
+
+  slideItem.appendChild(imgItem);
+  slideItem.appendChild(titleItem);
+  sliderCcontent.appendChild(slideItem);
 }
 
 slide();
+
+//ღილაკის კლიკ ივენთები
+
+arrowLeft.addEventListener("click", function () {
+  sliderIndex -= 1;
+  slide();
+});
+
+arrowRight.addEventListener("click", function () {
+  sliderIndex += 1;
+  slide();
+});

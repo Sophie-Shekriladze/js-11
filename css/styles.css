@@ -7,7 +7,9 @@
 .arrow{
     position: absolute;
     top: 50%;
-   transform: translateY(-50%);
+    transform: translateY(-50%);
+    border: none;
+    
 }
 
 .arrow-left {
@@ -16,4 +18,20 @@
 
 .arrow-right {
     right: 50px;
+}
+
+img{
+    width: 100%;
+}
+
+.fa-circle-chevron-right{
+    font-size: 25px;
+    color: brown;
+    cursor: pointer;
+}
+
+.fa-circle-chevron-left{
+    font-size: 25px;
+    color: brown;
+    cursor: pointer;
 }

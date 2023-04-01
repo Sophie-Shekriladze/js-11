@@ -26,10 +26,49 @@
                 <!-- აქ ვქმნით დივს ჯავადან -->
             </div>
         </div>
+
+
+        <form action id="registration-form"> 
+            <div>
+                <label for="username-field">Username</label>
+                <input type="text" name="username" id="username-field">
+                <p class="error-text" id="error-username"></p>
+            </div>
+    
+            <div>
+                <label for="password-field">password</label>
+                <input type="password" name="password" id="password-field1">
+                <p class="error-text" id="error-password"></p>
+            </div>
+    
+            <div>
+                <label for="password-field2">Repeat password</label>
+                <input type="password" name="password2" id="password-field2">
+                <p class="error-text" id="error-password2"></p>
+            </div>
+    
+            <div>
+             <input type="radio" name="age" id="age1">
+             <label for="age1">18-30</label>
+             <input type="radio" name="age" id="age2">
+             <label for="age2">30-50</label>
+             <p class="error-text" id="error-age"></p>
+            </div>
+    
+            <div>
+                <input type="checkbox" name="agree" id="agree">
+                <label for="agree">I agree terms</label>
+                <p class="error-text" id="error-agree"></p>
+                
+            </div>
+    
+            <button type="submit">Submit</button>
+        </form>
     </section>
     
 
 
     <script src="js/slider.js"></script>
+    <script src="js/form.js"></script>
 </body>
 </html>

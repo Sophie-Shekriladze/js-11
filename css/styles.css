@@ -63,3 +63,7 @@ img{
     color: red;
     cursor: pointer;
 }
+
+.error-text{
+ color: red;
+}

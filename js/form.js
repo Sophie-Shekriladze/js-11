@@ -104,4 +104,8 @@ emailField.addEventListener("keyup", function () {
     perrortext.style.color = "red";
     emailField.style.outline = "none";
   }
+  if (emailFieldVAlue == " ") {
+    perrortext.innerHTML = " ";
+    emailField.style.border = "2px solid black";
+  }
 });

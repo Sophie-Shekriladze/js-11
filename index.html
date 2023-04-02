@@ -27,8 +27,8 @@
             </div>
         </div>
 
-
-        <form action id="registration-form"> 
+        <form action="" id="registration-form" method="post">
+  
             <div>
                 <label for="username-field">Username</label>
                 <input type="text" name="username" id="username-field">
@@ -38,6 +38,7 @@
             <div>
                 <label for="password-field">password</label>
                 <input type="password" name="password" id="password-field1">
+                <i id="toggleIcon" class="fa-solid fa-eye"></i>
                 <p class="error-text" id="error-password"></p>
             </div>
     
@@ -45,6 +46,12 @@
                 <label for="password-field2">Repeat password</label>
                 <input type="password" name="password2" id="password-field2">
                 <p class="error-text" id="error-password2"></p>
+            </div>
+
+            <div>
+                <label for="emailField">Email</label>
+                <input type="email" id="emailField" name="myemail">
+                <p id="error-email"></p>
             </div>
     
             <div>

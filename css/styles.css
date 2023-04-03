@@ -67,3 +67,16 @@ img{
 .error-text{
  color: red;
 }
+
+.form {
+   width: 400px;
+   margin:  0 auto;
+   font-size: 20px;
+   align-items: first baseline;
+   margin-bottom: 30px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: 250px;
+
+}
